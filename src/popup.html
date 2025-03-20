@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>My Chrome Extension</title>
+    <title>Lamela Browser Extension</title>
     <style>
       body {
         width: 300px;
@@ -10,11 +10,35 @@
         padding: 10px;
         font-family: Arial, sans-serif;
       }
+      .access-code {
+        background: #f0f0f0;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+        word-break: break-all;
+      }
+      .status {
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 4px;
+      }
+      .connected {
+        background: #e6ffe6;
+        color: #006600;
+      }
+      .disconnected {
+        background: #ffe6e6;
+        color: #cc0000;
+      }
     </style>
   </head>
   <body>
-    <h1>My Chrome Extension</h1>
-    <div id="content">Extension is running!</div>
+    <h1>Lamela Browser Extension</h1>
+    <div id="status" class="status">Checking connection...</div>
+    <div>
+      <strong>Your Access Code:</strong>
+      <div id="accessCode" class="access-code">Loading...</div>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>

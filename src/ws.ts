@@ -99,16 +99,7 @@ export const initializeWebSocket = (accessCode: string): void => {
   socket.onopen = () => {
     debugLog('WebSocket connection established');
 
-    // Register with the server
-    const registerMessage = {
-      type: PacketType.REGISTER,
-      data: { accessCode }
-    };
-
     if (socket) {
-      debugLog('Sending registration message', registerMessage);
-      socket.send(JSON.stringify(registerMessage));
-
       // Set up ping interval to keep the connection alive
       // This is more efficient than sending full JSON messages
       pingInterval = setInterval(() => {

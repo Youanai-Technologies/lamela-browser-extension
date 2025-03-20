@@ -38,7 +38,6 @@ export enum CommandType {
 export enum PacketType {
   COMMAND = 'COMMAND',
   COMMAND_RESULT = 'COMMAND_RESULT',
-  REGISTER = 'REGISTER',
   INIT = 'INIT',
   EXIT = 'EXIT',
   PING = 'PING',
@@ -71,14 +70,6 @@ export interface CommandResultPacket {
   };
 }
 
-// Register packet structure
-export interface RegisterPacket {
-  type: PacketType.REGISTER;
-  data: {
-    accessCode: string;
-  };
-}
-
 // Init packet structure
 export interface InitPacket {
   type: PacketType.INIT;
@@ -94,7 +85,6 @@ export interface InitPacket {
 export type Packet =
   | CommandPacket
   | CommandResultPacket
-  | RegisterPacket
   | InitPacket
   | { type: PacketType.EXIT; data: any }
   | { type: PacketType.PING; data: any }
